@@ -1,0 +1,38 @@
+nav {
+    background-color: #353a40;
+    color: #fff; 
+    padding-top: 2vh;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    .menu-link {
+        display: flex;
+        justify-content: flex-start;
+        li {
+            list-style: none;
+            a {
+                color: #fff;
+                i {
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+            }
+            h3 {
+                margin-top: 3px;
+                margin-left: 15px;
+            }
+        }
+    }
+    .icons {
+        display: flex;
+        justify-content: flex-end;
+        li {
+            list-style: none;
+            i {
+                font-size: 25px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
