@@ -1,11 +1,11 @@
 <script setup>
     import Navbar from '../../components/userComponent/Navbar.vue';
-    import SideBar from '../../components/userComponent/SideBar.vue';
+    import Sidebar from '../../components/userComponent/Sidebar.vue';
 </script>
 
 <template>
     <Navbar />
-    <SideBar />
+    <Sidebar />
 </template>
 
 <style scoped lang="scss">

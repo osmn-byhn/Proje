@@ -7,6 +7,10 @@
             <li>
                 <h3>X-LOGO</h3>
             </li>
+            <button id="sidebarCollapse" class="btn btn-primary">
+                <i class="bi bi-list"></i>
+            </button>
+
         </ul>
         <ul class="icons">
             <li>

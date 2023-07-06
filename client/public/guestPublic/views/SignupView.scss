@@ -1,0 +1,25 @@
+.signup {
+    margin-top: 20vh;
+    padding: 5vh 10% 5vh 10%;
+    background: linear-gradient(110deg, #1955ad 60%, #0d4494 60%);
+    border-radius: 35px;
+    color: white;
+    h1 {
+        text-align: center;
+        color: white;
+    }
+    .row {
+        button {
+            background: linear-gradient(110deg, #fdcd3b 50%, #ffed4b 50%);
+            transition: 300ms ease-in-out;
+            &:hover {
+                background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+            }
+        }
+        div {
+            label {
+                margin-top: 4vh;
+            }
+        }
+    }
+}

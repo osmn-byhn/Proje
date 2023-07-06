@@ -32,7 +32,7 @@
                 <a href="/login" id="login">LOGİN</a>
             </li>
             <li>
-                <a href="/try" id="try">Try for Free</a>
+                <a href="/sign-up" id="try">Try for Free</a>
             </li>
         </ul>
     </nav>
