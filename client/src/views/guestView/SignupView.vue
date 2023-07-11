@@ -1,4 +1,48 @@
 <script setup>
+    import { useRouter, useRoute } from 'vue-router'
+    import axios from 'axios'
+    import { ref, onMounted } from "vue"
+    import router from '../../router';
+    const email = ref('')
+    const password = ref('')
+    const firstName = ref('')
+    const lastName = ref('')
+    const telNumber = ref('')
+    const error = ref('')
+    var popup = document.getElementById('popup')
+    var validRegexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/
+    var validRegexPassword = /^(?=.*\d)(?=.*[.!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,16}$/
+    async function Sign() {
+        let user = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            telNumber: telNumber.value,
+            password: password.value
+        }
+        if (validRegexEmail.test(email.value)) {
+            if (validRegexPassword.test(password.value)) {
+                await axios.post('http://localhost:3000/signup', user)
+                .then( res => {
+                    if (res.status === 200) {
+                        router.push('/dashboard')
+                    }
+                    //router.push('/home')
+                }, err => {
+                    error.value = err.response.data.error
+                })
+            } else {
+                error.value = 'Invalid password'
+            }
+        } else {
+            error.value = 'Invalid email'
+        }
+    }
+    onMounted( () => {
+        if (localStorage.getItem('token') !== null) {
+            router.push('/dashboard')
+        }
+    })
     function togglePassword() {
         var element = document.getElementById('password');
         var eye = document.getElementById('eye');
@@ -41,7 +85,7 @@
             </div>
             <div class="tel col-md-6">
                 <label for="tel-no">Phone Number</label>
-                <input type="tel" name="number" id="number" class="form-control" aria-label="Tel-No" placeholder="+000000000000">
+                <input type="tel" v-model="telNumber" name="number" id="number" class="form-control" aria-label="Tel-No" placeholder="+000000000000">
             </div>
             <div class="password col-md-6">
                 <label for="password">Password</label>
@@ -61,7 +105,7 @@
                     </span>
                 </div>
             </div>
-            <button class="btn btn-success">Create Account</button>
+            <button class="btn btn-success" @click="Sign()" :disabled="password.length <=8">Create Account</button>
             <br><br>
             <p>Are you have account? <a href="/login">Login</a></p>
         </div>

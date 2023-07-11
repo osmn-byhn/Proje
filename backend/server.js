@@ -19,13 +19,18 @@ app.use('/signup', signRouter)
 app.use('/login', loginRouter)
 
 
+
+
 app.listen(process.env.PORT, () => {
-  mongoose.set("strictQuery", false);
-  mongoose
-      .connect(process.env.MONGO_URL, {
-          useNewUrlParser: true,
-          useUnifiedTopology: true
-      })
-      .then(console.log("CONNECT TO DB..."))
-      .catch((err) => err)
+    mongoose.set("strictQuery", false);
+    mongoose
+        .connect(process.env.MONGO_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 30000,
+            keepAlive: true,
+            keepAliveInitialDelay: 300000,
+        })
+        .then(console.log("CONNECT TO DB...", process.env.PORT))
+        .catch((err) => err)
 })

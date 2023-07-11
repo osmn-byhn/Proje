@@ -1,4 +1,30 @@
 <script setup>
+    import axios from 'axios'
+    import { ref, onMounted } from "vue"
+    import router from '../../router';
+    const email = ref('')
+    const password = ref('')
+    const error = ref('')
+    async function Login() {
+        let user = {
+            email: email.value,
+            password: password.value
+        }
+        await axios.post('http://localhost:3000/login', user)
+            .then( res => {
+                if (res.status === 200) {
+                    localStorage.setItem('token', res.data.token)
+                }
+                router.push('/dashboard')
+            }, err => {
+                error.value = err.response.data.error
+            })
+    }
+    onMounted( () => {
+        if (localStorage.getItem('token') !== null) {
+            router.push('/dashboard')
+        }
+    })
     function togglePassword() {
         var element = document.getElementById('password');
         var eye = document.getElementById('eye');
@@ -30,7 +56,7 @@
                 </div>
             </div>
             <div class="button-group">
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-primary" @click="Login()" :disabled="password.length <= 8">
                     <i class="bi bi-arrow-right-circle-fill"></i> LOGIN
                 </button>
                 <a href="/forgot-password">Forgot Password</a>

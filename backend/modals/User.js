@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
-
+/*
 const integrationSchema = mongoose.Schema({
     platformName: {
         type: String,
@@ -22,7 +22,7 @@ const integrationSchema = mongoose.Schema({
         unique: true
     }
     
-})
+})*/
 const userSchema = mongoose.Schema({
     firstName: {
         type: String,
@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    mail: {
+    email: {
         type: String,
         required: true,
         unique: true
@@ -45,8 +45,8 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    integrations: [integrationSchema]
+    }/*,
+    integrations: [integrationSchema]*/
     
 })
 
