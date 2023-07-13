@@ -10,7 +10,7 @@
             email: email.value,
             password: password.value
         }
-        await axios.post('http://localhost:3000/login', user)
+        await axios.post('http://localhost:4000/login', user)
             .then( res => {
                 if (res.status === 200) {
                     localStorage.setItem('token', res.data.token)

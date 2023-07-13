@@ -46,48 +46,72 @@
 
 
     <div class="sidebar">
-        <div class="brand">
-            <p>B<span>rand</span></p>
-        </div>
+        
         <ul class="nav-list">
             <li class="nav-item">
                 <a href="#">
                     <span class="nav-item__icon">
-                    <ion-icon name="home-outline"></ion-icon>
+                      <i class="bi bi-ui-radios-grid"></i>
                     </span>
-                    <span class="nav-item__text">
-                    Home
-                    </span>
+                    <span class="nav-item__text">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#">
                     <span class="nav-item__icon">
-                    <ion-icon name="chatbox-outline"></ion-icon>
+                      <i class="bi bi-basket2"></i>
                     </span>
-                    <span class="nav-item__text">
-                    Messages
-                    </span>
+                    <span class="nav-item__text">Orders</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#">
                     <span class="nav-item__icon">
-                    <ion-icon name="people-outline"></ion-icon>
+                      <i class="bi bi-receipt-cutoff"></i>
                     </span>
-                    <span class="nav-item__text">
-                    Groups
-                    </span>
+                    <span class="nav-item__text">Bills</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#">
                     <span class="nav-item__icon">
-                    <ion-icon name="person-outline"></ion-icon>
+                      <i class="bi bi-stack"></i>
                     </span>
-                    <span class="nav-item__text">
-                    Friends
+                    <span class="nav-item__text">Products</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a href="#">
+                    <span class="nav-item__icon">
+                      <i class="bi bi-command"></i>
                     </span>
+                    <span class="nav-item__text">Batch Command</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <span class="nav-item__icon">
+                      <i class="bi bi-pie-chart-fill"></i>
+                    </span>
+                    <span class="nav-item__text">Reports</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <span class="nav-item__icon">
+                      <i class="bi bi-gear-wide-connected"></i>
+                    </span>
+                    <span class="nav-item__text">Settings</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <span class="nav-item__icon">
+                      <i class="bi bi-shop"></i>
+                    </span>
+                    <span class="nav-item__text">Shops</span>
                 </a>
             </li>
         </ul>
@@ -103,11 +127,9 @@
             <li class="nav-item">
                 <a href="#">
                     <span class="nav-item__icon logout">
-                    <ion-icon name="log-out-outline"></ion-icon>
+                      <i class="bi bi-box-arrow-right"></i>
                     </span>
-                    <span class="nav-item__text">
-                    Logout
-                    </span>
+                    <span class="nav-item__text">Logout</span>
                 </a>
             </li>
         </ul>
@@ -135,9 +157,9 @@ body {
 
 .sidebar {
   width: 4rem;
-  height: 100vh;
+  height: 92vh;
   position: fixed;
-  top: 0;
+  top: 8.3vh;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -150,7 +172,7 @@ body {
 }
 
 .sidebar:hover {
-  width: 12rem;
+  width: 15rem;
 }
 
 .brand {

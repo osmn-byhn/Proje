@@ -15,9 +15,9 @@
 
 
 
-
+    import axios from 'axios'
     
-/*
+
     // Trendyol API kimlik bilgilerini burada güncelleyin
     const apiKey = 'FlZAAQEYFTstE0WwTq91';
     const apiSecret = 'XlLYXiuXRa4mpkxoNoJ9';
@@ -67,7 +67,7 @@
     authorize()
     .then((accessToken) => listProducts(accessToken))
     .catch((error) => console.error('Hata:', error));
-*/
+
 </script>
 
 <template>
