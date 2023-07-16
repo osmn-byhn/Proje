@@ -1,60 +1,101 @@
-.closed {
-    width: 5%;
-    background-color: red;
-    #sidebar {
-        height: 100vh;
-        width: 250px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #f8f9fa;
-        padding: 15px;
-        transition: transform 0.3s ease-in-out;
-      }
-    
-      #sidebar.active {
-        transform: translateX(-250px);
-      }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-    ul {
-        li {
-            list-style: none;
-            span {
-                display: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.sidebar {
+    width: 4rem;
+    height: 92vh;
+    position: fixed;
+    top: 8.3vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 100;
+    cursor: pointer;
+    background: rgb(43,74,186);
+    background: linear-gradient(180deg, rgba(43,74,186,1) 0%, rgba(172,26,195,1) 100%); 
+    transition: 0.5s;
+    overflow: hidden;
+    .nav-list {
+        list-style: none;
+
+        .nav-item {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                background: #b5a73c;
             }
-            i {
-                font-size: 24px;
+            a {
+                position: relative;
+                white-space: nowrap;
+                display: flex;
+                gap: 1rem;
             }
         }
     }
-}
-.open {
-    width: 17%;
-    background-color: red;
-    #sidebar {
-        height: 100vh;
-        width: 250px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: #f8f9fa;
-        padding: 15px;
-        transition: transform 0.3s ease-in-out;
-      }
-    
-      #sidebar.active {
-        transform: translateX(-250px);
-      }
-
-    ul {
-        li {
-            list-style: none;
-            span {
-                display: block;
-            }
-            i {
-                font-size: 24px;
-            }
-        }
+    &:hover {
+        width: 15rem;
     }
 }
+.nav-item__icon {
+  position: relative;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item__text {
+  position: relative;
+  display: none;
+  font-size: 1em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.avatar {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+.logout {
+  margin-left: 0.2rem;
+}
+
+.sidebar:hover .brand span {
+  display: inline;  
+}
+
+.sidebar:hover .nav-item {
+  justify-content: start;
+}
+
+.sidebar:hover .nav-item__text {
+  display: flex;
+  align-items: center;
+}
+    //@import '../../../public/userPublic/components/SideBar.scss'
